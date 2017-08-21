@@ -1,0 +1,20 @@
+<p><a href='/users/<%= current_user.id %>'><%= @ideas.user.name.titleize %></a> says: <%= @ideas.content %></p>
+
+<h1>People Who Liked this: </h1>
+
+<table class='table'>
+   <thead>
+      <tr>
+         <th>Alias</th>
+         <th>Name</th>
+      </tr>
+   </thead>
+   <% @ideas.users.each do |user| %>
+      <tbody>
+         <tr>
+            <td><%= user.alias %></td>
+            <td><%= user.name %></td>
+         </tr>
+      </tbody>
+   <% end %>
+</table>
